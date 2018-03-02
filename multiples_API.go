@@ -39,7 +39,7 @@ func respondJSON (output interface{}, w http.ResponseWriter, r *http.Request) {
 // Home page to act as a help page
 func homePage(w http.ResponseWriter, r *http.Request) {
     fmt.Fprintf(w, "Welcome to the Multiples API\nPlease provide an input value in the form:\n" +
-                   "127.0.0.1/eval/<x> or localhost/eval/<x>\n" +
+                   "127.0.0.1/GET/<x> or localhost/GET/<x>\n" +
                    "Where \"<x>\" is the number you wish to evaluate")
 }
 
@@ -62,7 +62,7 @@ func evaluateValue(w http.ResponseWriter, r *http.Request) {
     if err != nil {
         fmt.Fprintf(w, "Invalid input, an integer must be provided\n\n" +
                      "Please provide an input value in the form:\n" +
-                     "127.0.0.1/eval/<x> or localhost/eval/<x>\n" +
+                     "127.0.0.1/GET/<x> or localhost/GET/<x>\n" +
                      "Where \"<x>\" is the number you wish to evaluate")
         return
     }
